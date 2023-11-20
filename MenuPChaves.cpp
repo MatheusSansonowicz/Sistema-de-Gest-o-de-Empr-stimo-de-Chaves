@@ -1,23 +1,35 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
 #include <string>
 #include <algorithm>
 
 using namespace std;
 
-struct Sala{
-    string local;
-    int nChaves;
-    string portador;
-}
+#include CadastrarSala.h
 
-struct usuário{
+struct funcionario{
     string Nome;
     string contato;
-    string função;
+    string funcao;
     bool pegouChave;
-    string chavepega;
 }
+
+struct aluno{
+    string Nome;
+    string contato;
+    string funcao;
+    bool pegouChaveA;
+    string autorizacao;
+}
+
+/*struct RelacaoDeEmprestimo {
+        bool emAndamento;
+        string NomePegou;
+        string salaPega;
+        int copiaPega;
+}*/
 
 main(){
 
@@ -26,11 +38,13 @@ main(){
         cout << "--Menu chave--\n\n";
         
         cout << "1. Cadastrar sala.\n";
-        cout << "2. Cadastar autorização.\n";
-        cout << "3. Retirar chave\n";
-        cout << "4. Devolver Chave\n";
-        cout << "5. Listar Chaves\n"
-        cout << "6. Sair\n";
+        cout << "2. Cadastar funcionario.\n";
+        cout << "3. Cadastar aluno.\n";
+        cut << "4. Cadastrar autorizacao.\n"
+        cout << "5. Retirar chave\n";
+        cout << "6. Devolver Chave\n";
+        cout << "7. Listar Chaves\n";
+        cout << "8. Sair\n";
         cout << "Escolha uma opcao: ";
         cin >> opcao;
 
@@ -52,10 +66,10 @@ main(){
                 ListarChave();
                 break;
         case 6:
-                cout << "Até mais.\n";
+                cout << "Ateh mais.\n";
                 break;
         default:
                 cout << "Opcao invalida. Tente novamente.\n";
         }
-    } while (opcao!=6);
+    } while (opcao!=8);
 }
