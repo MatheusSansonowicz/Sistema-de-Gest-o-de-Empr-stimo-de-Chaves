@@ -1,7 +1,7 @@
 struct funcionario{
     string Nome;
     string contato;
-    string funcao;
+    int funcao;
     /*bool pegouChave;*/
 }
 
@@ -60,7 +60,11 @@ void CadastrarFuncionario() {
     cout << "Digite o contato do novo funcionario: ";
     cin >> novoFuncionario.contato;
 
-    cout << "Digite a função do novo funcionario: ";
+    cout << "Nivel de autorização do novo funcionario: \n";
+    cout << "1. Básico (faxineiro/ cozinheiro /etc)\n";
+    cout << "2. Médio (professor e outras funcoes mais importantes)\n";
+    cout << "3. Alto (Membros da administracao, ex: diretor, vicerdiretor.)\n";
+    cout << "Digite o nivel: "
     cin >> novoFuncionario.funcao;
 
     // Lógica para registrar o novo funcionario
