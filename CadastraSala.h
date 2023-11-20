@@ -1,10 +1,8 @@
-struct Sala {
+struct Sala{
     string local;
     int nChaves;
     string portador;
-};
-
-vector<Sala> listaSalas; // Certifique-se de que você tem essa declaração em algum lugar do seu código
+}
 
 string salaParaCSV(const Sala& sala) {
     stringstream ss;
@@ -27,9 +25,9 @@ void escreverCSV(const vector<Sala>& salas, const string& nomeArquivo) {
     }
 }
 
-bool salaExistente(string local) {
-    for (const Sala& sala : listaSalas) {
-        if (sala.local == local) {
+bool salaExistente (string local){
+    for ( const Sala& sala : listaSalas){
+        if (sala.local== local){
             return true;
         }
     }
@@ -49,25 +47,35 @@ void CadastrarSala() {
             cin >> resposta;
             if (resposta == "S" || resposta == "s" || resposta == "sim" || resposta == "Sim") {
                 // Lógica para registrar mais uma cópia de chave
-                novaSala.nChaves++; // Adapte conforme necessário
-            } else {
-                // Lógica para não registrar cópia adicional
                 // Adapte conforme necessário
+                for (Sala& sala : listaSalas) {
+                    if (sala.local == novaSala.local) {
+                        sala.nChaves++;
+                        cout << "Mais uma cópia de chave registrada com sucesso!\n";
+                        break;
+                    }
+                }
+            } else {
+                // Retornar ao menu principal
+                return;
             }
         } else {
             // Lógica para registrar a nova sala
             // Adapte conforme necessário
-            novaSala.nChaves = 1; // Definindo o número inicial de chaves
+            cout << "Digite o número de chaves para a nova sala: ";
+            cin >> novaSala.nChaves;
             listaSalas.push_back(novaSala);
             cout << "Nova sala registrada com sucesso!\n";
+            
+            return;
         }
 
         // Lógica adicional para continuar o cadastro de salas se necessário
-        cout << "Deseja cadastrar outra sala? (S/N): ";
-        cin >> resposta;
 
-    } while (resposta == "S" || resposta == "s" || resposta == "sim" || resposta == "Sim");
+    } while ( resposta != N);
 
     // Chame a função para escrever a lista atualizada no arquivo CSV
     escreverCSV(listaSalas, "dados_salas.csv");
 }
+
+
