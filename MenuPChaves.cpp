@@ -9,16 +9,6 @@ using namespace std;
 
 #include CadastrarSala.h
 
-
-
-struct aluno{
-    string Nome;
-    string contato;
-    string funcao;
-    bool pegouChaveA;
-    string autorizacao;
-}
-
 /*struct RelacaoDeEmprestimo {
         bool emAndamento;
         string NomePegou;
