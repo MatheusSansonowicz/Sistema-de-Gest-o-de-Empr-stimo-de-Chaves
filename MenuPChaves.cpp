@@ -9,12 +9,7 @@ using namespace std;
 
 #include CadastrarSala.h
 
-struct funcionario{
-    string Nome;
-    string contato;
-    string funcao;
-    bool pegouChave;
-}
+
 
 struct aluno{
     string Nome;
@@ -54,18 +49,18 @@ main(){
             break;
          
         case 2:
-                CadastarUsuario();
+                CadastrarFuncionario();
                 break;
         case 3:
-                RetirarChave();
+                CadastrarAluno();
                 break;
         case 4:
-                DevolverChave();
+                CadastrarAutorizacao();
                 break;
-        case 5:
+        /*case 5:
                 ListarChave();
-                break;
-        case 6:
+                break; */
+        case 8:
                 cout << "Ateh mais.\n";
                 break;
         default:
